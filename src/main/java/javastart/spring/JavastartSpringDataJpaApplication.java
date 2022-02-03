@@ -13,6 +13,15 @@ public class JavastartSpringDataJpaApplication {
         BikeRepository bikeRepository = context.getBean(BikeRepository.class);
         bikeRepository.save(bike1);
         System.out.println("Zapisano w bazie bike1");
+        Bike bike2 = new Bike(2L, "Trek Marlin 7, 26 cali damski", "TMAR98765", 25, 80);
+        bikeRepository.save(bike2);
+        System.out.println("Zapisano w bazie bike2");
+        System.out.println("Pobieram i wyświetlam bike2:");
+        bikeRepository.findById(2L).ifPresent(System.out::println);
+        System.out.println("Usuwam z bazy bike1");
+        bikeRepository.deleteById(1L);
+        System.out.println("Pobieram i wyświetlam bike1:");
+        bikeRepository.findById(1L).ifPresentOrElse(System.out::println, () -> System.out.println("Brak roweru z id 1L"));
     }
 
 }

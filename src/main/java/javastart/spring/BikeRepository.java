@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.util.Optional;
 
 @Repository
 public class BikeRepository {
@@ -16,6 +17,15 @@ public class BikeRepository {
     @Transactional
     public void save(Bike bike){
         entityManager.persist(bike);
+    }
+
+    public Optional<Bike> findById(Long id){
+        return Optional.ofNullable(entityManager.find(Bike.class,id));
+    }
+
+    @Transactional
+    public void deleteById(Long id){
+        findById(id).ifPresent(entityManager::remove);
     }
 
 }
