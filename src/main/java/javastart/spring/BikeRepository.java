@@ -14,7 +14,6 @@ public class BikeRepository {
         this.entityManager = entityManager;
     }
 
-    @Transactional
     public void save(Bike bike) {
         if (exists(bike)) {
             entityManager.merge(bike);
@@ -27,7 +26,6 @@ public class BikeRepository {
         return Optional.ofNullable(entityManager.find(Bike.class, id));
     }
 
-    @Transactional
     public void deleteById(Long id) {
         findById(id).ifPresent(entityManager::remove);
     }
