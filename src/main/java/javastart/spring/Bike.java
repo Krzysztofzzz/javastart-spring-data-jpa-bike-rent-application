@@ -2,6 +2,7 @@ package javastart.spring;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.time.LocalDateTime;
 
 @Entity
 public class Bike {
@@ -13,6 +14,8 @@ public class Bike {
     private double hourPrice;
     private double dayPrice;
     private String borrowerId;
+    private LocalDateTime dateOfReturn;
+
 
     public Bike() {
     }
@@ -24,6 +27,63 @@ public class Bike {
         this.hourPrice = hourPrice;
         this.dayPrice = dayPrice;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getSerialNo() {
+        return serialNo;
+    }
+
+    public void setSerialNo(String serialNo) {
+        this.serialNo = serialNo;
+    }
+
+    public double getHourPrice() {
+        return hourPrice;
+    }
+
+    public void setHourPrice(double hourPrice) {
+        this.hourPrice = hourPrice;
+    }
+
+    public double getDayPrice() {
+        return dayPrice;
+    }
+
+    public void setDayPrice(double dayPrice) {
+        this.dayPrice = dayPrice;
+    }
+
+    public String getBorrowerId() {
+        return borrowerId;
+    }
+
+    public void setBorrowerId(String borrowerId) {
+        this.borrowerId = borrowerId;
+    }
+
+    public LocalDateTime getDateOfReturn() {
+        return dateOfReturn;
+    }
+
+    public void setDateOfReturn(LocalDateTime dateOfReturn) {
+        this.dateOfReturn = dateOfReturn;
+    }
+
 
     @Override
     public String toString() {
