@@ -54,4 +54,14 @@ class BikeDto {
     public void setDayPrice(double dayPrice) {
         this.dayPrice = dayPrice;
     }
+    @Override
+    public String toString() {
+        return "BikeDto{" +
+                "id=" + id +
+                ", model='" + model + '\'' +
+                ", serialNo='" + serialNo + '\'' +
+                ", hourPrice=" + hourPrice +
+                ", dayPrice=" + dayPrice +
+                '}';
+    }
 }

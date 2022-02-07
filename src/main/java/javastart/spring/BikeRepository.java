@@ -11,7 +11,7 @@ interface BikeRepository extends CrudRepository<Bike, Long> {
 
     int countAllByBorrowerIdIsNotNull();
 
-    List<Bike> findAllByBorrowerIdIsNullOOrderByDayPrice();
-    
+    List<Bike> findAllByBorrowerIdIsNullOrderByDayPrice();
+
 
 }
