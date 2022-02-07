@@ -14,7 +14,7 @@ public class BikeService {
     }
 
     @Transactional
-    public void add(NewBikeDto newBike) {
+    public void add(BikeDto newBike) {
         Bike bike = new Bike(newBike.getId(),
                 newBike.getModel(),
                 newBike.getSerialNo(),

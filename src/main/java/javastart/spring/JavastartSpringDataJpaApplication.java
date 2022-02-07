@@ -9,7 +9,7 @@ public class JavastartSpringDataJpaApplication {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(JavastartSpringDataJpaApplication    .class, args);
-        NewBikeDto bike1 = new NewBikeDto(1L, "Kross Esker 4.0, 29 cali męski", "KRS12345", 30, 100);
+        BikeDto bike1 = new BikeDto(1L, "Kross Esker 4.0, 29 cali męski", "KRS12345", 30, 100);
         BikeService bikeService = context.getBean(BikeService.class);
         bikeService.add(bike1);
         double payment = bikeService.rentForHours(1L, 5, "ABC999");
