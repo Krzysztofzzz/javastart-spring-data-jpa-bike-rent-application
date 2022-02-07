@@ -15,16 +15,16 @@ public class BikeRepository {
     }
 
     @Transactional
-    public void save(Bike bike){
+    public void save(Bike bike) {
         entityManager.persist(bike);
     }
 
-    public Optional<Bike> findById(Long id){
-        return Optional.ofNullable(entityManager.find(Bike.class,id));
+    public Optional<Bike> findById(Long id) {
+        return Optional.ofNullable(entityManager.find(Bike.class, id));
     }
 
     @Transactional
-    public void deleteById(Long id){
+    public void deleteById(Long id) {
         findById(id).ifPresent(entityManager::remove);
     }
 

@@ -1,4 +1,4 @@
 package javastart.spring;
 
-public class BikeNotFoundException extends RuntimeException{
+public class BikeNotFoundException extends RuntimeException {
 }

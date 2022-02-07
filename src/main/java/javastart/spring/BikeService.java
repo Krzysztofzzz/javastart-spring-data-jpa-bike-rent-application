@@ -36,8 +36,8 @@ public class BikeService {
         return updateBike(bikeId, dateOfReturn, borrowerId).getDayPrice();
     }
 
-    public void returnBike(Long bikeId){
-        updateBike(bikeId,null,null);
+    public void returnBike(Long bikeId) {
+        updateBike(bikeId, null, null);
     }
 
     private Bike updateBike(Long bikeId, LocalDateTime dateOfReturn, String borrowerId) {
